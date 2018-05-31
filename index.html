@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>Who's that Pokemon? Game</title>
+        <link rel="stylesheet" href="styles.css">
+        <audio controls autoplay>
+        <!--This doesn't actually autoplay/ How do I fix it?-->
+        <source src="soundeffect.mp3" type="audio/mpeg">
+        <source src="soundeffect.ogg" type="video/ogg">
+       
+        </audio>
+    </head>
+
+    <body>
+    
+        <div id="derp">
+            <h1>Who's That PoKeMoN? Game</h1>
+            <img id="im" src="images/Who.png" alt="pokemon">
+            <!--All the pokemon images used-->
+            <img id="absol" src="images/Absol.png" alt="pokemon">
+            <img id="braixen" src="images/braixen.png" alt="pokemon">
+            <img id="chansey" src="images/chansey.png" alt="pokemon">
+            <img id="flareon" src="images/flareon.png" alt="pokemon">
+            <img id="gastly" src="images/gastly.png" alt="pokemon">
+            <img id="growlithe" src="images/growlithe.png" alt="pokemon">
+            <img id="kingdra" src="images/Kingdra.jpg" alt="pokemon">
+            <img id="pikachu" src="images/pikachu.png" alt="pokemon">
+            <img id="rowlet" src="images/rowlet.jpg" alt="pokemon">
+            <img id="umbreon" src="images/umbreon.jpg" alt="pokemon">
+            <img id="vulpix" src="images/vulpix.jpg" alt=pokemon>
+
+        <div id="game">
+            <h1 id="SomePoKeMoN">It's! " + somePokemon + "!</h1>
+            <p>Guess what PoKeMoN I'm thinking of!</p>
+            <p>Total Wins: </p>
+            <p>Total Losses: </p>
+            <p>Guesses Left: </p>
+            <p>Your Guesses so far: </p>
+            <p>Right Guesses so far: </p>
+            <p>Wrong Guesses so far: </p>
+        </div>
+
+        <script type="text/javascript">
+            
+            // Creates an array that lists out all of the options
+            var computerChoices = ["absol", "kingdra", "chansey","growlithe","umbreon","braixen","rowlet","vulpix","gastly","flareon","pikachu",];
+            // Creating variables to hold the number of wins, losses, gusses, and gusses so far
+            var wins = 0;
+            var losses = 0;
+            var wordWrong = 9;
+            var guessesSoFar = [];
+            // Randomly chooses a choice from the options array. This is the Computer's guess
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            console.log(computerGuess);
+            // Adds arrays for general answers, wrong answers, and right answers
+            var answerArray= [];
+            var rightWord= [];
+            var wrongWord= [];
+            // Put underscores for what the computer Guesses
+            for (var i = 0; i < computerGuess.length; i++) 
+            {
+                answerArray[i]="_";
+            }
+            // Change opacity to 1 when computer calls the image.
+
+            if (computerGuess === "absol") {
+                absol.style.opacity ="1.0";
+                }
+            else if (computerGuess === "kingdra") {
+                kingdra.style.opacity="1.0";
+                }
+            else if (computerGuess === "chansey") {
+                chansey.style.opacity="1.0";
+                }
+            else if (computerGuess === "growlithe") {
+                growlithe.style.opacity="1.0";
+                }
+            else if (computerGuess === "umbreon") {
+                umbreon.style.opacity="1.0";
+                }
+            else if (computerGuess === "braixen") {
+                braixen.style.opacity="1.0";
+                }
+            else if (computerGuess === "rowlet") {
+                rowlet.style.opacity="1.0";
+                }
+            else if (computerGuess === "vulpix") {
+                vulpix.style.opacity="1.0";
+                }
+            else if (computerGuess === "gastly") {
+                gastly.style.opacity="1.0";
+                }
+            else if (computerGuess === "flareon") {
+                flareon.style.opacity="1.0";
+                }
+            else if (computerGuess === "pikachu") {
+                pikachu.style.opacity="1.0";
+                };
+               
+            // Key listener for the event function
+            document.onkeyup = function(event) {
+                // Determines which key was pressed
+                var userGuess = event.key;
+                // Putting guesses into gussesSoFar
+                guessesSoFar.push(userGuess);  
+                //if user guess is right place it into _'s and continue
+                if (computerGuess.indexOf(userGuess) > -1) 
+                {
+                answerArray[computerGuess.indexOf(userGuess)] = userGuess;
+                // Push into right words if guessed correctly
+                rightWord.push(userGuess); 
+                }
+                // Else push into wrong words if gussed incorrectly and - from guesses avaliable
+                else {wrongWord.push(userGuess);
+                wordWrong--;
+                };
+                // If all letters are gussed correctly, win message + reset
+                if (answerArray.join("") === computerGuess) 
+                {
+                wins++;
+                //Reset
+                wordWrong = 9; 
+                guessesSoFar.length = 0;
+                rightWord.length= 0;
+                wrongWord.length= 0;
+                var win= alert("Gratz! You Won!");
+                if (win) {
+                    document.location.reload();
+                }
+                else {
+                    document.location.reload();
+                }
+                // If number of words wrong exceeds allowed attempts, lose + reset
+                }
+                else if (wordWrong === 0)
+                {
+                losses++;
+                //reset
+                wordWrong = 9; 
+                guessesSoFar.length = 0;
+                rightWord.length= 0;
+                wrongWord.length= 0;
+                var lose= alert("Nope, try again!");
+                if (lose) {
+                    document.location.reload();
+                }
+                else {
+                    document.location.reload();
+                }
+                }
+                var html =
+                "<h1>It's! " + answerArray+ "!</h1>"+
+                "<p>Guess what PoKeMoN I'm thinking of!</p>" +
+                "<p>Total Wins: " + wins + "</p>" +
+                "<p>Total Losses: " + losses + "</p>" +
+                "<p>Guesses Left: " + wordWrong + "</p>" +
+                "<p>Your Guesses so far: " +guessesSoFar +"</p>"+
+                "<p>Right Guesses so far: " +rightWord +"</p>"+
+                "<p>Wrong Guesses so far: " +wrongWord + "</p>";
+                
+                document.querySelector('#game').innerHTML = html;      
+            }
+            
+        </script>
+
+    </body>
+
+
+
+</html>

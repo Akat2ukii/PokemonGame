@@ -1,0 +1,108 @@
+body{
+    background:rgb(237, 28, 36)
+}
+@font-face {
+    font-family: PokemonSolid;
+    src: url(PokemonSolid.ttf);
+}
+p {
+    font-family: PokemonSolid;
+}
+h1 {
+    font-family: PokemonSolid;
+    color:yellow;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+    letter-spacing: 3px;
+    margin-left:15%;
+}
+#Who {
+    position: relative;
+}
+#absol{
+    height:150px;
+    width:150px;
+    position:absolute;
+    left:450px;
+    top:310px;
+    opacity: 0.0;
+}
+#braixen{
+    height:150px;
+    width:150px;
+    position:absolute;
+    left:450px;
+    top:310px;
+    opacity: 0.0;
+}
+#chansey{
+    height:150px;
+    width:150px;
+    position:absolute;
+    left:450px;
+    top:310px;
+    opacity: 0.0;
+}
+#flareon{
+    height:150px;
+    width:150px;
+    position:absolute;
+    left:450px;
+    top:310px;
+    opacity: 0.0;
+}
+#gastly{
+    height:150px;
+    width:150px;
+    position:absolute;
+    left:450px;
+    top:310px;
+    opacity: 0.0;
+}
+#growlithe{
+    height:150px;
+    width:150px;
+    position:absolute;
+    left:450px;
+    top:310px;
+    opacity: 0.0;
+}
+#kingdra{
+    height:150px;
+    width:150px;
+    position:absolute;
+    left:450px;
+    top:310px;
+    opacity: 0.0;
+}
+#pikachu{
+    height:150px;
+    width:150px;
+    position:absolute;
+    left:450px;
+    top:310px;
+    opacity: 0.0;
+}
+#rowlet{
+    height:150px;
+    width:150px;
+    position:absolute;
+    left:450px;
+    top:310px;
+    opacity: 0.0;
+}
+#umbreon{
+    height:150px;
+    width:150px;
+    position:absolute;
+    left:450px;
+    top:310px;
+    opacity: 0.0;
+}
+#vulpix{
+    height:150px;
+    width:150px;
+    position:absolute;
+    left:450px;
+    top:310px;
+    opacity: 0.0;
+}
